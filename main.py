@@ -80,7 +80,6 @@ def vypsat_ctverce(obrazovka):
             pygame.draw.rect(obrazovka, barva, pygame.Rect(
                 sloupec * VELIKOST_CTVERCE, radek * VELIKOST_CTVERCE, VELIKOST_CTVERCE, VELIKOST_CTVERCE))
 
-
 # vypisuje figurky pomoci aktualniho stavu pole
 
 def vypsat_figurky(obrazovka, pole_sachy):
