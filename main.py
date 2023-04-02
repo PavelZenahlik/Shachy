@@ -48,7 +48,7 @@ class Pohyb():
         self.pocatecni_sloupec = pocatecni_ctverec[1]
         self.koncovy_radek = koncovy_ctverec[0]
         self.koncovy_sloupec = koncovy_ctverec[1]
-        self.hybnuta_figurka = pole[self.pocatecni_radek][self.pocatecni_radek]
+        self.hybnuta_figurka = pole[self.pocatecni_radek][self.pocatecni_sloupec]
         self.sebrana_figurka = pole[self.koncovy_radek][self.koncovy_sloupec]
 
     def get_sachova_notace(self): # Vypíše počáteční a koncový čtverec figurky
