@@ -29,10 +29,11 @@ class Stav_hry():
         self.zaznam_pohybu = []
 
     def udelej_pohyb(self, pohyb):
-        self.pole[pohyb.pocatecni_radek][pohyb.pocatecni_sloupec] = "30" # Počáteční čtverec figurky se vyprázdní
-        self.pole[pohyb.koncovy_radek][pohyb.koncovy_sloupec] = pohyb.hybnuta_figurka
-        self.zaznam_pohybu.append(pohyb) # Zaznamená pohyb, abychom ho později mohli později vrátit
-        self.bily_na_tahu = not self.bily_na_tahu # Prohodí hráče
+        if self.pole[pohyb.pocatecni_radek][pohyb.pocatecni_sloupec] != "30":  # Kontroluje, jestli je počáteční čtverec prázdný
+            self.pole[pohyb.pocatecni_radek][pohyb.pocatecni_sloupec] = "30" # Počáteční čtverec figurky se vyprázdní
+            self.pole[pohyb.koncovy_radek][pohyb.koncovy_sloupec] = pohyb.hybnuta_figurka
+            self.zaznam_pohybu.append(pohyb) # Zaznamená pohyb, abychom ho později mohli později vrátit
+            self.bily_na_tahu = not self.bily_na_tahu # Prohodí hráče
 
 class Pohyb():
     # Přiřadí klíče k hodnotám
