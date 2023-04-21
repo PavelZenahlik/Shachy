@@ -107,3 +107,10 @@ form input{
 .button:hover{
     background-color: white;
 }
+
+/* About us, Download, Leaderboards */
+.content{
+    background-color: white;
+    margin: 1rem;
+    padding: 1rem;
+}
