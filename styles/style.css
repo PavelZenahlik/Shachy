@@ -114,3 +114,30 @@ form input{
     margin: 1rem;
     padding: 1rem;
 }
+
+
+.download-content{
+    display: flex;
+    align-items: center;
+}
+
+.download-header{
+    display: inline;
+}
+
+.download-button{
+    margin-left: 3rem;
+    background-color: #0dd61e;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 3px solid black;
+    transition: all 0.15s ease 0s;
+}
+
+.download-button:hover{
+    background-color: #74f55d;
+}
