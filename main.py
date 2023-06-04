@@ -35,6 +35,13 @@ class Stav_hry():
             self.zaznam_pohybu.append(pohyb) # Zaznamená pohyb, abychom ho později mohli později vrátit
             self.bily_na_tahu = not self.bily_na_tahu # Prohodí hráče
 
+    def vratit_tah(self):
+        if len(self.zaznam_pohybu) != 0: # Ujišťuje, zda byl už proveden aspoň 1 tah
+            tah = self.zaznam_pohybu.pop()
+            self.pole[tah.pocatecni_radek][tah.pocatecni_sloupec] = tah.hybnuta_figurka
+            self.pole[tah.koncovy_radek][tah.koncovy_sloupec] = tah.sebrana_figurka
+            self.bily_na_tahu = not self.bily_na_tahu # Prohodí tah
+
 class Pohyb():
     # Přiřadí klíče k hodnotám
     horizontala_do_radku = {"1": 7, "2": 6, "3": 5, "4": 4,
@@ -106,6 +113,9 @@ def main():
                     pole_sachy.udelej_pohyb(pohyb)
                     vybrany_ctverec = ()
                     kliknuti_hrace = []
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_u: # Pokud je U stisknuto, vrátí se tah
+                    pole_sachy.vratit_tah()
 
         vypsat_stav_hry(obrazovka, pole_sachy)
         clock.tick(FPS)
