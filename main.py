@@ -1,4 +1,5 @@
 import pygame
+import mysql.connector
 pygame.init()
 
 class Stav_hry():
@@ -149,6 +150,13 @@ def vypsat_figurky(obrazovka, pole_sachy):
                 obrazovka.blit(FIGURKY[figurka], pygame.Rect(
                     sloupec * VELIKOST_CTVERCE, radek * VELIKOST_CTVERCE + 2, VELIKOST_CTVERCE, VELIKOST_CTVERCE))
 
+mydb = mysql.connector.connect(
+  host="dbs.spskladno.cz",
+  user="student15",
+  password="spsnet"
+)
+
+print(mydb)
 
 if __name__ == "__main__":
     main()
